@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".UI.ImageDetails">
 
-
     <ImageView
         android:id="@+id/iv_full_view"
         android:layout_width="match_parent"
@@ -24,6 +23,7 @@
         android:orientation="vertical"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintTop_toBottomOf="@+id/iv_full_view">
 
         <RelativeLayout
@@ -38,10 +38,10 @@
                 android:layout_centerVertical="true"
                 android:layout_gravity="center"
                 android:layout_marginEnd="5dp"
-                android:layout_toLeftOf="@id/tv_likes"
+                android:layout_toStartOf="@id/tv_likes"
                 android:ellipsize="end"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 tools:text="Photo owner name" />
 
             <TextView
@@ -53,45 +53,9 @@
                 android:gravity="center_vertical"
                 android:padding="2dp"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@android:color/white"
-                tools:text="12"
-                app:drawableStartCompat="@drawable/favourite" />
-
-
+                android:textColor="@android:color/black"
+                app:drawableStartCompat="@drawable/favourite"
+                tools:text="12" />
         </RelativeLayout>
-
-
-        <TextView
-            android:id="@+id/tv_image_category"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="7dp"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@android:color/white"
-            android:textSize="14sp"
-            tools:text="image category" />
-
-        <TextView
-            android:id="@+id/tv_image_dimensions"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="7dp"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@android:color/white"
-            android:textSize="14sp"
-            tools:text="image dimensions" />
-
-        <TextView
-            android:id="@+id/tv_image_published_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="7dp"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@android:color/white"
-            android:textSize="14sp"
-            tools:text="image publish date" />
-
     </LinearLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

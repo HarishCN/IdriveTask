@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity(),ItemClickListner, SwipeRefreshLayout.On
                     is ApiState.Failure -> {
                         binding.recyclerview.isVisible = false
                         binding.progressBar.isVisible = false
-                        Log.d("main", "onCreate: ${it.msg}")
+                        //Log.d("main", "onCreate: ${it.msg}")
                     }
                     is ApiState.Success->{
                         binding.recyclerview.isVisible = true

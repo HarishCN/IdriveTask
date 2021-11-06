@@ -48,11 +48,6 @@ open class ImageLoader (context: Context)  {
 
         @Synchronized
         fun with(context: Context): ImageLoader {
-
-            require(context != null) {
-                "ImageLoader:with - Context should not be null."
-            }
-
             return INSTANCE ?: ImageLoader(context).also {
                 INSTANCE = it
             }
@@ -61,12 +56,7 @@ open class ImageLoader (context: Context)  {
     }
 
     fun load(imageView: ImageView, imageUrl: String) {
-
-        require(imageView != null) {
-            "ImageLoader:load - ImageView should not be null."
-        }
-
-        require(imageUrl != null && imageUrl.isNotEmpty()) {
+        require(imageUrl.isNotEmpty()) {
             "ImageLoader:load - Image Url should not be empty"
         }
 
@@ -76,23 +66,16 @@ open class ImageLoader (context: Context)  {
         val bitmap = checkImageInCache(imageUrl)
         bitmap?.let {
             loadImageIntoImageView(imageView, it, imageUrl)
-            Log.d("Image","cache")
+            Log.d("Image","Image fetched from cache")
         } ?: run {
             executorService.submit(PhotosLoader(ImageRequest(imageUrl, imageView)))
-            Log.d("Image","Network")
+            Log.d("Image","Image fetched from Network")
         }
     }
 
     @Synchronized
     private  fun loadImageIntoImageView(imageView: ImageView, bitmap: Bitmap?, imageUrl: String) {
-
-        require(bitmap != null) {
-            "ImageLoader:loadImageIntoImageView - Bitmap should not be null"
-            return
-        }
-
-        val scaledBitmap = Utils.scaleBitmapForLoad(bitmap, imageView.width, imageView.height)
-
+        val scaledBitmap = Utils.scaleBitmapForLoad(bitmap!!, imageView.width, imageView.height)
         scaledBitmap?.let {
             if(!isImageViewReused(ImageRequest(imageUrl, imageView))) imageView.setImageBitmap(scaledBitmap)
         }

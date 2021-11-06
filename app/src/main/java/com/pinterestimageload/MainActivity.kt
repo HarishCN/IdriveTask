@@ -1,17 +1,17 @@
 package com.pinterestimageload
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import com.pinterestimageload.UI.ImageDetails
-import com.pinterestimageload.Util.ApiState
-import com.pinterestimageload.Util.Constant
-import com.pinterestimageload.ViewModel.MainViewModel
+import com.pinterestimageload.ui.ImageDetails
+import com.pinterestimageload.util.ApiState
+import com.pinterestimageload.util.Constant
+import com.pinterestimageload.viewModel.MainViewModel
 import com.pinterestimageload.adapters.ImagePostAdapter
 import com.pinterestimageload.databinding.ActivityMainBinding
 import com.pinterestimageload.interfaces.ItemClickListner

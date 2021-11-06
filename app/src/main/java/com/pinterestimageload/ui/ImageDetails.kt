@@ -1,12 +1,12 @@
-package com.pinterestimageload.UI
+package com.pinterestimageload.ui
 
-import android.R
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import com.imageloader.ImageLoader
-import com.pinterestimageload.Util.Constant
+import com.pinterestimageload.R
+import com.pinterestimageload.util.Constant
 import com.pinterestimageload.databinding.ActivityImageDetailsBinding
 
 
@@ -19,6 +19,7 @@ class ImageDetails : AppCompatActivity() {
         setContentView(binding.root)
         val actionBar: ActionBar? = supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)
+        actionBar?.title ="Image Details"
         initRecyclerview()
     }
 
@@ -34,26 +35,24 @@ class ImageDetails : AppCompatActivity() {
 
     private fun initRecyclerview() {
         intent?.let {
-            ImageLoader.with(this).load(binding.ivFullView, intent.getStringExtra(Constant.IMAGE_URL))
+            ImageLoader.with(this).load(binding.ivFullView, intent.getStringExtra(Constant.IMAGE_URL)!!)
             binding.tvTitle.text = intent.getStringExtra(Constant.USER_NAME)
-            binding.tvLikes.text = intent.getStringExtra("likes")
-            if (intent.getBooleanExtra("likesByUser", false) == true) {
+            binding.tvLikes.text = intent.getIntExtra("likes",1).toString()
+            if (intent.getBooleanExtra(Constant.LIKES_BY_USER, false)) {
                 binding.tvLikes.setCompoundDrawablesWithIntrinsicBounds(
-                    com.pinterestimageload.R.drawable.favourite,
+                    R.drawable.favourite,
                     0,
                     0,
                     0
                 )
             } else {
                 binding.tvLikes.setCompoundDrawablesWithIntrinsicBounds(
-                    com.pinterestimageload.R.drawable.un_favoutite,
+                    R.drawable.un_favoutite,
                     0,
                     0,
                     0
                 )
             }
-        }?.run {
-
         }
     }
 }

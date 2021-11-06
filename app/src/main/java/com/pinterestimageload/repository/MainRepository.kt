@@ -1,4 +1,4 @@
-package com.pinterestimageload.Repository
+package com.pinterestimageload.repository
 
 import com.pinterestimageload.models.ResponseModel
 import com.pinterestimageload.network.ApiServiceImpl

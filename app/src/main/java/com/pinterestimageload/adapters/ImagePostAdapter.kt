@@ -25,16 +25,17 @@ class ImagePostAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         with(holder) {
-            binding.tvUserName.text = postList[position].user.username
-            if (postList[position].liked_by_user == true) {
-                binding.tvLikes?.setCompoundDrawablesWithIntrinsicBounds(
+            binding.tvUserName.text = postList[position].user.name
+            binding.tvLikes.text = postList[position].likes.toString()
+            if (postList[position].liked_by_user) {
+                binding.tvLikes.setCompoundDrawablesWithIntrinsicBounds(
                     R.drawable.favourite,
                     0,
                     0,
                     0
                 )
             } else {
-                binding.tvLikes?.setCompoundDrawablesWithIntrinsicBounds(
+                binding.tvLikes.setCompoundDrawablesWithIntrinsicBounds(
                     R.drawable.un_favoutite,
                     0,
                     0,

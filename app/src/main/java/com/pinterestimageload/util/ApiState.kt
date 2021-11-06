@@ -1,4 +1,4 @@
-package com.pinterestimageload.Util
+package com.pinterestimageload.util
 
 import com.pinterestimageload.models.ResponseModel
 

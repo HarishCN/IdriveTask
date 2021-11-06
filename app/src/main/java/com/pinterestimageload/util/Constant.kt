@@ -1,4 +1,4 @@
-package com.pinterestimageload.Util
+package com.pinterestimageload.util
 
 object Constant {
     const val IMAGE_URL = "imageUrl"

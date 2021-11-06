@@ -1,9 +1,9 @@
-package com.pinterestimageload.ViewModel
+package com.pinterestimageload.viewModel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.pinterestimageload.Repository.MainRepository
-import com.pinterestimageload.Util.ApiState
+import com.pinterestimageload.repository.MainRepository
+import com.pinterestimageload.util.ApiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
